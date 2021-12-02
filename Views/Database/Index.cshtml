@@ -1,0 +1,47 @@
+﻿@*@model IEnumerable<decaf.Models.Medžiaga>*@
+
+@{
+    ViewData["Title"] = "Database";
+}
+
+<link rel="stylesheet" href="~/css/databasestyle.css" />
+<!-- BODY -->
+<!-- SECTION 5 -->
+<section id="section5" class="section5">
+    <div data-aos="zoom-in-down" class="cmid_container" >
+        <h1 class="dbtext">
+            Database
+        </h1>
+        <p class="smalltext">Welcome to the database. In order to view its content, select the category and type in text filter if needed.</p><br><br>
+        <div class="row" style="height: 700px;">
+            <div class="col" style="padding-left: 100px;">
+                <div class="filterbox">
+                    <h1 style="text-align: center; font-size: 20px; padding-bottom: 20px;">Search</h1>
+                    <p>Select category:</p>
+
+                    <form method="post" asp-controller="database" asp-action="ShowDB">
+                        @Html.DropDownList("Psl", new List<SelectListItem>
+                        {
+                            new SelectListItem{ Text="Please select", Value = "Database", Selected=true },
+                            new SelectListItem{ Text="Gamintojai", Value = "gamintojai"},
+                            new SelectListItem{ Text="Modeliai", Value = "modeliai" },
+                            new SelectListItem{ Text="Dizaineriai", Value = "dizaineriai" },
+                            new SelectListItem{ Text="Avalynė", Value = "avalyne"},
+                            new SelectListItem{ Text="Medžiagos", Value = "medziagos" },
+                            new SelectListItem{ Text="Naudoja", Value = "naudoja"},
+                            new SelectListItem{ Text="Samdo", Value = "samdo"},
+                        })
+
+                        <br><br>ID search (optional):<br><br>@Html.TextBox("id")<br><br>
+                        <input type="submit" value="Search" class="button-1" />
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="lefttpanel" style="padding-left: 50px;">
+            <p>Need help? <a href=@Url.Action("index", "Contact")>Contact</a> us.</p>
+        </div>
+    </div>
+
+</section>

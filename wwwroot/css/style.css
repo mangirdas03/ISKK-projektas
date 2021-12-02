@@ -1,0 +1,422 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+section {
+  padding: 0px 0;
+  overflow: hidden;
+}
+
+
+body{
+  background: #F4EBD9;
+  padding-top: 100px;
+}
+
+
+/* 
+Spalvos:
+
+#483D3F
+#058ED9
+#77685D
+
+*/
+
+/* Headeris */
+.header {
+  transition: all 0.5s;
+  max-height: 80px;
+  border-bottom: #A39A92;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* Headerio spalvos pasikeitimas pascrollinus žemiau */
+.header.header-scrolled {
+
+  background-color: #A39A92;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+  border-style: hidden;
+  padding-bottom: 10px;
+}
+
+/* Logotipo elementas */
+.header .logo {
+  line-height: 0;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+/* Logotipo paveikslėlis */
+.header .logo img {
+  margin-right: 5px;
+  
+  border-radius: 30%;
+  max-height: 70px;
+  transition: 1s;
+}
+
+/* Pavadinimas */
+.header .logo span {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #058ED9;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* navbar'o list'as */
+.navbar ul { 
+  margin-top: 10px;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+/* navbaro listo elementai <a> */
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #483D3F;
+  white-space: nowrap;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* navbaro listo elementu <a>  paveiksleliai <i> */
+.navbar a i, .navbar a:focus i {
+  line-height: 0;
+  margin-left: 5px;
+}
+
+/* efektu atsiradimas uzvedus pele ant navbaro daliu bei logotipo*/
+.navbar a:hover, .header .logo img:hover{
+  color: #058ED9;
+	transform: scale(1.3); 
+  text-decoration: underline;
+}
+
+.welcome {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+.welcome span {
+  transition: 0.5s;
+  color: #483D3F;
+}
+.welcome span:hover {
+  transform: scale(1.2); 
+  transition: 0.5s;
+}
+
+.shoe{
+  display: block;
+  margin:  auto;
+  height: 200px;
+  width: 300px;
+  margin-top: 50px;
+  margin-bottom: 300px;
+  animation-name: spinningshoe;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function:linear;
+}
+@keyframes spinningshoe {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+.section1{
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+.section2{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Stulpeliai BOOTSTRAP */
+
+.col-md-4 {
+  padding: 10px;
+  width: 33.33%;
+  height: 600px;
+  padding: 25px;
+  word-wrap: break-word;  /* Perkelia ilga teksta i kita eilute */
+  border-radius: 2%;
+  color: #F4EBD9;
+}
+
+
+/* Nuotrauku stulpeliuosi stilius */
+.colimg {
+  display:flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.sideimg {
+  width: 350px;
+  height: 450px;
+  border-radius: 1%;
+}
+
+.colimg:hover {
+  transform: scale(1.1); 
+  transition: 0.5s;
+}
+
+.rowhead{
+  font-size: 32px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.button-1 {
+  background-color: #A39A92;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: #483D3F 0 2px 4px,#483D3F 0 7px 13px -3px,#483D3F 0 -3px 0 inset;
+  color: black;
+  font-family: "JetBrains Mono",monospace;
+  height: 80px;
+  width: 200px;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.button-1:hover {
+  box-shadow: #2d234266 0 4px 8px, #2d23424d 0 7px 13px -3px, #483D3F 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-1:active {
+  box-shadow: #483D3F 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.mid_container{
+
+  margin: auto;
+  width: 50%;
+  background-color: #78695e80;
+  padding: 50px;
+  color: black;
+  height: 500px;
+  border-radius: 2%;
+}
+
+.intext {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #058ED9;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.faq{
+  padding-left: 25%;
+  width: 75%;
+  padding-bottom: 100px;
+}
+
+.faq .accordion {
+  background-color: #78695e80;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+.faq .panel {
+  padding: 0 1px;
+  display: none;
+  background-color: #78695e80;
+  overflow: hidden;
+  padding-top: 20px;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+.faq .active, .accordion:hover {
+  background-color: #A39A92;
+}
+
+
+
+.faq .accordion:after { 
+  content: '\002B';
+  
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.faq .active:after {
+  content: "\2212";
+}
+
+
+
+
+.timedate {
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+.footer {
+  /* background-color: #004e7a80; */
+  
+  background-color: #A39A92;
+  padding: 0 0 30px 0;
+  font-size: 14px;
+}
+
+.footer .copyright {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 30px;
+  color: #483D3F;
+}
+
+.footer .creator {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #483D3F;
+}
+
+.footer .creator span {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #483D3F;
+}
+
+.footer .creator span:hover {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #0084ff;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/* MOBILE */
+.mobile-nav-toggle {
+  color: #483D3F;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
+}
+
+@media (max-width: 1050px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #A39A92;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #F4EBD9;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #483D3F;
+}
+
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: #0084ff;
+	transform: scale(1.0); 
+  font-size: 30px;
+  text-decoration: underline;
+  
+}
+
+.centerbutton {
+  padding-top: 15%;
+  text-align: center;
+
+}

@@ -1,0 +1,79 @@
+﻿@model decaf.Models.Modeli
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<link rel="stylesheet" href="~/css/addstyle.css" />
+<section id="section5" class="section5">
+    <div data-aos="zoom-in-down" class="cmid_container" style="height:700px">
+        <h1 class="dbtext">
+            Edit
+        </h1>
+        <p class="smalltext">Welcome to the database. In this page you are able to add and edit database entries. Please fill all the fields.</p><br><br>
+        <div class="addbox" style="height:400px">
+            <form method="post" asp-controller="modeliai" asp-action="edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <table>
+                    <tr>
+                        <td>Pavadinimas</td>
+                        <td>
+                            <input type="text" asp-for="Pavadinimas" />
+                            <span asp-validation-for="Pavadinimas" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sukūrimo data</td>
+                        <td>
+                            <input type="date" asp-for="SukūrimoData" />
+                            <span asp-validation-for="SukūrimoData" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Patento numeris</td>
+                        <td>
+                            <input type="text" asp-for="PatentoNumeris" />
+                            <span asp-validation-for="PatentoNumeris" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dizaineris</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.FkDizainerisasmensKodas, ViewBag.Di as IEnumerable<SelectListItem>, "Select designer")
+                            <span asp-validation-for="FkDizainerisasmensKodas" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gamintojas</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.FkGamintojasidGamintojas, ViewBag.Ga as IEnumerable<SelectListItem>, "Select Brand")
+                            <span asp-validation-for="FkGamintojasidGamintojas" class="text-danger"></span>
+                            <input type="hidden" asp-for="IdModelis" />
+                        </td>
+                    </tr>
+                    @*<tr>
+                        <td>ID </td>
+                        <td>*@
+
+                    @*<span asp-validation-for="IdModelis" class="text-danger"></span>*@
+                    @*</td>
+                        </tr>*@
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input type="submit" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+                <p style="text-align:center; color:red;"><strong>@TempData["Error"]</strong></p>
+
+            </form>
+        </div>
+        <div class="lefttpanel" style="text-align: center; float: right; clear: both;">
+            <p>Need help? <a href=@Url.Action("index", "Contact")>Contact</a> us.</p>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

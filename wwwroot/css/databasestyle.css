@@ -1,0 +1,62 @@
+.section5{
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
+
+.cmid_container {
+    margin: auto;
+    width: 100%;
+    background-color: hsl(25, 12%, 42%, 0.5);
+    padding: 50px;
+    color: black;
+    height: 100%;
+    border-radius: 2%;
+}
+
+.filterbox{
+    margin-top: 50px;
+    float: left;
+    width: 300px;
+    background-color: #058ED9;
+    color: black;
+    height: 370px;
+    border-radius: 6%;
+    padding: 30px;
+    padding-left: 45px;
+}
+
+.addbox{
+  margin-top: 50px;
+  float: left;
+  width: 300px;
+  background-color: #058ED9;
+  color: black;
+  height: 210px;
+  border-radius: 6%;
+  padding: 30px;
+  padding-left: 45px;
+}
+
+
+.dbtext {
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 38px;
+font-weight: 500;
+letter-spacing: 2px;
+color: #058ED9;
+margin-top: 10px;
+margin-bottom: 5px;
+text-align: center;
+padding-bottom: 30px;
+}
+
+tablee {
+    font-family: arial, sans-serif;
+    width: 350px;
+}
+
+td, th {
+    border: 3px solid #000000;
+    text-align: left;
+    padding: 8px;
+}

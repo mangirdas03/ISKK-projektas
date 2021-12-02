@@ -1,0 +1,49 @@
+﻿@model decaf.Models.Naudoja
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<link rel="stylesheet" href="~/css/addstyle.css" />
+<section id="section5" class="section5">
+    <div data-aos="zoom-in-down" class="cmid_container" style="height:510px">
+        <h1 class="dbtext">
+            Add
+        </h1>
+        <p class="smalltext">Welcome to the database. In this page you are able to add and edit database entries. Please fill all the fields.</p><br><br>
+        <div class="addbox" style="height:210px">
+            <form method="post" asp-controller="naudoja" asp-action="add">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <table>
+                    <tr>
+                        <td>Avalynės ID</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.FkAvalynėindividualusNumeris, ViewBag.Av as IEnumerable<SelectListItem>, "Select")
+                            <span asp-validation-for="FkAvalynėindividualusNumeris" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Medžiaga</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.FkMedžiagaidMedžiaga, ViewBag.Me as IEnumerable<SelectListItem>, "Select")
+                            <span asp-validation-for="FkMedžiagaidMedžiaga" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input type="submit" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+                <p style="text-align:center; color:red;"><strong>@TempData["Error"]</strong></p>
+            </form>
+        </div>
+        <div class="lefttpanel" style="text-align: center; float: right; clear: both;">
+            <p>Need help? <a href=@Url.Action("index", "Contact")>Contact</a> us.</p>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

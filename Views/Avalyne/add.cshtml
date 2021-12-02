@@ -1,0 +1,88 @@
+﻿@model decaf.Models.Avalynė
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<link rel="stylesheet" href="~/css/addstyle.css" />
+<section id="section5" class="section5">
+    <div data-aos="zoom-in-down" class="cmid_container">
+        <h1 class="dbtext">
+            Add
+        </h1>
+        <p class="smalltext">Welcome to the database. In this page you are able to add and edit database entries. Please fill all the fields.</p><br><br>
+        <div class="addbox">
+            <form method="post" asp-controller="avalyne" asp-action="add" style="padding-bottom:400px">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <table style="border-color:transparent">
+                    <tr>
+                        <td>Modelio ID</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.FkModelisidModelis, ViewBag.Mod as IEnumerable<SelectListItem>, "Select model")
+                            <span asp-validation-for="FkModelisidModelis" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dydis</td>
+                        <td>
+                            <input type="number" asp-for="Dydis" />
+                            <span asp-validation-for="Dydis" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kaina</td>
+                        <td>
+                            <input type="number" asp-for="Kaina" />
+                            <span asp-validation-for="Kaina" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Spalva</td>
+                        <td>
+                            <input type="tel" asp-for="Spalva" />
+                            <span asp-validation-for="Spalva" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Partijos Nr.</td>
+                        <td>
+                            <input type="number" asp-for="PartijosNumeris" />
+                            <span asp-validation-for="PartijosNumeris" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pagaminimo data</td>
+                        <td>
+                            <input type="date" asp-for="PagaminimoData" />
+                            <span asp-validation-for="PagaminimoData" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td>
+                            <input type="number" asp-for="IndividualusNumeris" />
+                            <span asp-validation-for="IndividualusNumeris" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input type="submit" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+                <p style="text-align:center; color:red;"><strong>@TempData["Error"]</strong></p>
+
+
+
+            </form>
+        </div>
+        <div class="lefttpanel" style="text-align: center; float: right; clear: both;">
+            <p>Need help? <a href=@Url.Action("index", "Contact")>Contact</a> us.</p>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

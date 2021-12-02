@@ -1,0 +1,65 @@
+﻿@model decaf.Models.Medžiaga
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<link rel="stylesheet" href="~/css/addstyle.css" />
+<section id="section5" class="section5">
+    <div data-aos="zoom-in-down" class="cmid_container" style="height:620px">
+        <h1 class="dbtext">
+            Add
+        </h1>
+        <p class="smalltext">Welcome to the database. In this page you are able to add and edit database entries. Please fill all the fields.</p><br><br>
+        <div class="addbox" style="height:310px">
+            <form method="post" asp-controller="medziagos" asp-action="add">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <table>
+                    <tr>
+                        <td>Pavadinimas</td>
+                        <td>
+                            <input type="text" asp-for="Pavadinimas" />
+                            <span asp-validation-for="Pavadinimas" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tipas</td>
+                        <td>
+                            <input type="text" asp-for="Tipas" />
+                            <span asp-validation-for="Tipas" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Apdirbimas</td>
+                        <td>
+                            <input type="text" asp-for="Apdirbimas" />
+                            <span asp-validation-for="Apdirbimas" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td>
+                            <input type="number" asp-for="IdMedžiaga" />
+                            <span asp-validation-for="IdMedžiaga" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input type="submit" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+
+
+
+            </form>
+        </div>
+        <div class="lefttpanel" style="text-align: center; float: right; clear: both;">
+            <p>Need help? <a href=@Url.Action("index", "Contact")>Contact</a> us.</p>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

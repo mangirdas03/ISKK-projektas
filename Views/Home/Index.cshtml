@@ -1,0 +1,104 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="welcome"><span>WELCOME</span></div>
+<div data-aos="zoom-in"><img src="~/img/j1.png" alt="j1" class="shoe"></div>
+
+
+<!-- BOOTSTRAP -->
+<!-- SECTION 1 -->
+<section id="section1" class="section1">
+    <div class="row">
+        <div class="col-md-4">
+            <div data-aos="flip-right" class="colimg">
+                <img src="~/img/w1.jpg" class="sideimg">
+            </div>
+        </div>
+        <div class="col-md-4" style="background-color:#058ED9;">
+            <div class="midcol">
+                <h1 class="rowhead">
+                    Our shoe database
+                </h1>
+                <p>Welcome to our website, we hope you will find what you are looking for. This is a website made by sneakerheads for sneakerheads. We have a huge database that includes a variety of rare and popular sneakers from well known brands. In the database, our users are also able to view the following information about our shoes:</p>
+                <ul>
+                    <li>Manufacturer (Brand)</li>
+                    <li>Designer</li>
+                    <li>Various specifications</li>
+                </ul>
+                <p>Click the button below to view our database!</p>
+                <div data-aos="zoom-in-down" class="centerbutton">
+                    <button class="button-1" role="button" onclick="location.href='@Url.Action("index", "Database")'">View Database</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div data-aos="flip-right" class="colimg">
+                <img src="~/img/w2.jpg" class="sideimg">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- SECTION 2 -->
+<section id="section2" class="section2">
+    <div data-aos="zoom-in-down" class="mid_container">
+        <h1 class="intext">
+            About this website
+        </h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+    </div>
+</section>
+
+
+
+<!-- SECTION 4 -->
+<section id="section4" class="section4">
+    <div class="faqheader" style="text-align: center; font-size: 38px; font-weight: bold; padding-bottom: 20px;">F.A.Q</div>
+
+    <div class="faq">
+        <button class="accordion">Can I add information to the database? </button>
+        <div class="panel">
+            <p>Yes! You are able to add, edit and delete database entries.</p>
+        </div>
+
+        <button class="accordion">What can we use this website for?</button>
+        <div class="panel">
+            <p>Users are able to add and search for information in our sneaker ralated database. </p>
+        </div>
+
+        <button class="accordion">I have a question. Can I contact the creaton of this website?</button>
+        <div class="panel">
+            <p>Yes! You can use this <a href=@Url.Action("index", "Contact")>link</a> to contact us.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 5 -->
+<section id="section5" class="section5">
+    <p></p>
+    <div id="time" class="timedate"></div>
+    <div id="date" class="timedate"></div>
+    <div class="timedate">
+        <p>
+            You added
+            @if (HttpContextAccessor.HttpContext.Session.GetInt32("add_cnt") != null)
+            {
+                @HttpContextAccessor.HttpContext.Session.GetInt32("add_cnt")
+            }
+            else
+            {
+                @Html.Raw("0")
+            }
+            item(-s) to the database.
+        </p>
+    </div>
+    <p style="text-align:center">@Html.HelloWorldHtmlString()</p> 
+
+</section>
